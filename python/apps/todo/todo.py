@@ -1,5 +1,7 @@
 import flet as ft
 
+! pip install colorama
+from colorama import Fore,Back,Style
 
 class Task(ft.Column):
     def __init__(self, task_name, task_status_change, task_delete):
@@ -85,7 +87,7 @@ class TodoApp(ft.Column):
             scrollable=False,
             selected_index=0,
             on_change=self.tabs_changed,
-            tabs=[ft.Tab(text="all"), ft.Tab(text="active"), ft.Tab(text="completed")],
+            tabs=[ft.Tab(text=(Fore.GREEN+"All"))), ft.Tab(text="Active"), ft.Tab(text="Completed")],
         )
 
         self.items_left = ft.Text("0 items left")
